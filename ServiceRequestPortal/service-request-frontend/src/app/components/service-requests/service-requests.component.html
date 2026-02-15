@@ -1,0 +1,11 @@
+<h2>Service Requests</h2>
+
+<input placeholder="Title" [(ngModel)]="newRequest.title" />
+<input placeholder="Description" [(ngModel)]="newRequest.description" />
+<button (click)="submit()">Submit</button>
+
+<ul>
+  <li *ngFor="let r of requests">
+    {{ r.title }} - {{ r.status }}
+  </li>
+</ul>

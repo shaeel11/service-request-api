@@ -1,0 +1,38 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+stages:
+- stage: Build_Backend
+  displayName: Build .NET API
+  jobs:
+  - job: Build
+    steps:
+    - task: UseDotNet@2
+      inputs:
+        version: '8.x'
+
+    - script: |
+        dotnet restore
+        dotnet build --configuration $(buildConfiguration)
+      displayName: Build API
+
+- stage: Build_Frontend
+  displayName: Build Angular App
+  jobs:
+  - job: BuildAngular
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '24.x'
+
+    - script: |
+        cd service-request-frontend
+        npm install
+        npm run build
+      displayName: Build Angular
