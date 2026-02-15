@@ -1,114 +1,51 @@
-# Service Request Management API
+# Service Request Management System
 
-An enterprise-style backend API built with ASP.NET Core and Entity Framework Core to manage service requests with role-based authentication and relational data modeling.
-
----
-
-## Overview
-
-This project simulates a government-style service request portal where users can:
-
-- Register and authenticate using JWT
-- Submit service requests
-- Track request status
-- View paginated results
-- Enforce role-based authorization (Admin/User)
-- Maintain status history tracking
-
-The application follows clean layered architecture principles and demonstrates enterprise backend development practices.
+A full-stack web application built with **ASP.NET Core, Angular, and SQL Server**, demonstrating real-world enterprise development and frontend-backend integration.
 
 ---
 
-## Tech Stack
-
-- ASP.NET Core (.NET 8)
-- C#
-- Entity Framework Core
-- SQL Server
-- RESTful API Design
-- JWT Authentication
-- Repository Pattern
-- Dependency Injection
-- Global Exception Middleware
-- Swagger / OpenAPI
+## 🔧 Tech Stack
+- **Backend:** ASP.NET Core (.NET 8), C#, Entity Framework Core, SQL Server
+- **Frontend:** Angular (Standalone Components), TypeScript, HTML/CSS
+- **DevOps:** Azure DevOps YAML (CI-ready)
 
 ---
 
-## Architecture
-
-The project follows a layered architecture:
-
-Controllers → Services → Repositories → DbContext → Database
-
-### Key Design Decisions
-
-- Separation of concerns via repository pattern
-- Async database operations
-- Pagination support
-- Data validation using Data Annotations
-- Foreign key relationships with navigation properties
-- Role-based access control using JWT claims
-- Centralized exception handling middleware
+## 🚀 Features
+- RESTful API with pagination
+- DTO-based request and response models
+- Angular frontend consuming backend APIs
+- Client- and server-side validation
+- CORS configuration for browser clients
+- Relational database with enforced foreign keys
+- Swagger for API testing and verification
 
 ---
 
-## Database Design
-
-### Tables
-
-- Users
-- ServiceRequests
-- StatusHistories
-
-### Relationships
-
-- One User → Many ServiceRequests
-- One ServiceRequest → Many StatusHistories
-
-Migrations are used for schema management.
+## 🏗 Architecture Highlights
+- Clean separation between API contracts (DTOs) and EF Core entities
+- Proper handling of JSON serialization cycles
+- End-to-end data flow:
+  **Angular → API → Database → API → Angular**
 
 ---
 
-## Authentication
+## ▶ Run Locally
 
-- JWT-based authentication
-- Role claims embedded in token
-- Protected endpoints using `[Authorize]`
-- Role-based access using `[Authorize(Roles = "Admin")]`
+**Backend**
+dotnet restore
+dotnet ef database update
+dotnet run
 
----
-
-## API Endpoints
-
-### Authentication
-- POST /api/auth/register
-- POST /api/auth/login
-
-### Service Requests
-- GET /api/servicerequests
-- GET /api/servicerequests/{id}
-- POST /api/servicerequests
-- PUT /api/servicerequests/{id}
-- DELETE /api/servicerequests/{id}
+**Frontend**
+npm install
+ng serve
 
 ---
+## What This Project Demonstrates
 
-## ▶ Running the Project
-
-1. Clone the repository
-2. Update connection string in `appsettings.json`
-3. Run migrations: dotnet ef database update
-4. Start the server: dotnet run
-5. Navigate to: http://localhost:xxxx/swagger
-
----
-
-## Learning Objectives
-
-This project was built to strengthen backend development skills in:
-
-- C# and ASP.NET Core
-- Relational database modeling
-- Entity Framework Core
-- Authentication & Authorization
-- Enterprise API design patterns
+- Full-stack development with .NET and Angular
+- Real-world debugging (CORS, validation, serialization, FK constraints)
+- Enterprise-style API design
+- SQL relational data modeling
+- CI-ready project structure
