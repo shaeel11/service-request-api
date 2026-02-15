@@ -4,14 +4,14 @@ A full-stack web application built with **ASP.NET Core, Angular, and SQL Server*
 
 ---
 
-## 🔧 Tech Stack
+## Tech Stack
 - **Backend:** ASP.NET Core (.NET 8), C#, Entity Framework Core, SQL Server
 - **Frontend:** Angular (Standalone Components), TypeScript, HTML/CSS
 - **DevOps:** Azure DevOps YAML (CI-ready)
 
 ---
 
-## 🚀 Features
+## Features
 - RESTful API with pagination
 - DTO-based request and response models
 - Angular frontend consuming backend APIs
@@ -22,7 +22,7 @@ A full-stack web application built with **ASP.NET Core, Angular, and SQL Server*
 
 ---
 
-## 🏗 Architecture Highlights
+## Architecture Highlights
 - Clean separation between API contracts (DTOs) and EF Core entities
 - Proper handling of JSON serialization cycles
 - End-to-end data flow:
@@ -30,7 +30,7 @@ A full-stack web application built with **ASP.NET Core, Angular, and SQL Server*
 
 ---
 
-## ▶ Run Locally
+## Run Locally
 
 **Backend**
 dotnet restore
