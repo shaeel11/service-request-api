@@ -1,0 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using ServiceRequestPortal.Models;
+
+namespace ServiceRequestPortal.Data
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options) { }
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<ServiceRequest> ServiceRequests { get; set; }
+        public DbSet<StatusHistory> StatusHistories { get; set; }
+    }
+}
